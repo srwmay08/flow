@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript | Flow | Four</title>
+</head>
+<body>
+    <script>
+        /*
+            Calvinball (http://www.picpak.net/calvin/oldsite/images/oogy.gif) is a game with a very complicated scoring system. Your job is to write a piece of code which determines the winner of a game.
+            
+            Provided below are three different player's scores. Uncomment one at a time to calculate the score for that player.
+            
+            Calvinball Rules:
+                1. A player's score is equal to 500 if their score is not already a number. (this is implemented below).
+                2. 
+                3. 
+                4. 
+                5. 
+                6. 
+        */
+        
+    /*
+        //Player One
+        var score = 193;
+        var last_play = "Q";
+        var broom = "handle";
+        var has_ball = false;
+        var is_in_tree = false;
+        var crying = false;
+     */  
+        
+        
+      /*  
+		//Player Two
+        var score = 394;
+        var last_play = "W";
+        var broom = "none";
+        var has_ball = true;
+        var is_in_tree = true;
+        var crying = false;
+        */
+        
+        
+        //Player Three
+        var score = "f";
+        var last_play = 1.5;
+        var broom = "brush";
+        var has_ball = true;
+        var is_in_tree = false;
+        var crying = true;
+        
+		
+// Rule 1
+        if (typeof(score) != "number") {
+            score = 500;
+        }
+// Rule 2 - A player's score is reduced by 300 if they are crying. Otherwise it is increased by 50.
+		if (crying) {
+			score = score - 300
+			console.log(score);
+		} else {
+			score = score + 50
+			console.log(score);
+		}
+// Rule 3 - A player's score is reduced by 77 if their last play was "Q"
+		if (last_play == "Q") {
+			score = score - 77
+			console.log(score)
+		}
+// Rule 4 - A player gets an extra 395 points if they are in a tree, unless their last play was a number.
+		if (is_in_tree) {
+			if (typeof(last_play) != "number") {
+				score = 395 + score
+				console.log(score);
+			}
+		}
+// Rule 5 - A player's score is doubled if they are holding the broom handle, but it is tripled if they have the broom brush. Otherwise the player's score is halved.
+		if (broom == "handle") {
+			score = score * 2
+			console.log(score);
+		} else if (broom == "brush") {
+			score = score * 3
+			console.log(score);
+		} else {
+			score = score / 2
+			console.log(score);
+		}
+		
+// Rule 6 - A player's score is multiplied by 1.5 if they are carrying the ball but only if they are not in a tree. Disregard this rule if the player is crying.
+		if (!crying) {
+			if (!is_in_tree) {
+				if (has_ball) {
+					score = score * 1.5
+					console.log(score);
+				}
+			}
+		}
+		
+// PART 7 - If the player's last play was a number (not a letter), the player's score is multiplied by that amount.
+		if (typeof(last_play) != "number") {
+			console.log("Last play was not a number");
+			console.log(score)
+		} else {
+			score = score * last_play;
+			console.log(score);
+		}
+
+// Player 1: 332, Player 2: 419.5, Player 3: 900
+		
+		
+    </script>
+</body>
+</html>
